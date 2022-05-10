@@ -54,6 +54,11 @@ function loaiKhachHang(loaiKhach) {
 function hienThiTienCap(maKH, loaiKH, soKenh, ketNoi) {
     // Tạo biến tienCap và xử lý logic
     var tienCap = 0;
+    const donViTien = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 2
+      });
     if(loaiKH === "nhaDan") {
         tienCap = 4.5 + 20.5 + soKenh * 7.5;
     } else if(loaiKH === "doanhNghiep") {
@@ -68,6 +73,6 @@ function hienThiTienCap(maKH, loaiKH, soKenh, ketNoi) {
 
     // Gọi id in kết quả
     getId("tienCap").style.display = "block";
-    getId("xuatTienCap").innerHTML = "Mã khách hàng: " + maKH + "; " + "Tiền cáp: " + "$" + tienCap.toFixed(2);
+    getId("xuatTienCap").innerHTML = "Mã khách hàng: " + maKH + "; " + "Tiền cáp: " + donViTien.format(tienCap);
 }
 
