@@ -56,6 +56,7 @@ function showCalculateTax(fullName, totalIncome, calculate) {
     var tax = 0;
     if(fullName == "" || totalIncome == "") {
         alert("Vui lòng nhập giá trị");
+        return;
     } else if(calculate <= 60e6) {
         tax = calculate * 0.05;
     } else if(calculate <= 120e6) {

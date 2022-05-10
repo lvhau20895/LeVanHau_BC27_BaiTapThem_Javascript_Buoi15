@@ -69,6 +69,7 @@ function hienThiTienCap(maKH, loaiKH, soKenh, ketNoi) {
         }
     } else {
         alert("Hãy chọn loại khách hàng");
+        return;
     }
 
     // Gọi id in kết quả
